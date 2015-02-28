@@ -10,8 +10,6 @@ local part = Instance.new("Part")
 part.FormFactor = Enum.FormFactor.Symmetric
 part.Size = Vector3.new(1,1,1)
 part.Anchored = true
-part.Transparency = .6
-part.BrickColor = BrickColor.Green()
 
 local mesh = Instance.new("SpecialMesh", part)
 mesh.MeshType = Enum.MeshType.FileMesh
