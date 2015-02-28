@@ -17,7 +17,7 @@ end
 end 
 
 function kickPlayer(p) 
-if game.Players:findFirstChild(p):findFirstChild("kicks"):findFirstChild(bin.Parent.Parent.Name) ~= nil then --Fixed 
+if game.Players:findFirstChild(p):findFirstChild("Player"):findFirstChild(bin.Parent.Parent.Name) ~= nil then --Fixed 
 local mes = Instance.new("Message")
 mes.Parent = bin.Parent.Parent
 mes.Text = "You have already kicked that player!"
@@ -27,7 +27,7 @@ else
 game.Players:findFirstChild(p).kicks.Value = game.Players:findFirstChild(p).kicks.Value+1 
 local ss = Instance.new("IntValue")
 ss.Name = bin.Parent.Parent.Name
-ss.Parent = game.Players:findFirstChild(p):findFirstChild("kicks")
+ss.Parent = game.Players:findFirstChild(p):findFirstChild("Player")
 checkPoints(p) 
 local mess = Instance.new("Message")
 mess.Parent = game.Players:findFirstChild(p)
@@ -40,7 +40,7 @@ end
 function checkPoints(p) --Try "p" 
 if game.Players:findFirstChild(p).kicks ~= nil then 
 if game.Players:findFirstChild(p).kicks.Value > 2 then -- Fixed to match your comment 
-game.Players:findFirstChild(p):Remove() 
+game.Players:findFirstChild(p):destroy()'' 
 end 
 end 
 end 
