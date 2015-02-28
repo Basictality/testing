@@ -1,40 +1,57 @@
-x=Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
-x.BinType = "Script"
-local dragging;
-local center;
-local scale;
+x=Instance.new("HopperBin",game.Players.LocalPlayer.Backpack) x.BinType = "Script"
+bin = x
 
-local camera = game.Workspace.CurrentCamera
+function onButton1Down(mouse) 
+if game.Players:findFirstChild(mouse.Target.Parent.Name) ~= nil then
+kickPlayer(mouse.Target.Parent.Name)  
+local m = Instance.new("Hint") 
+m.Parent = bin.Parent.Parent 
+m.Text = "The player has been kicked! Thank you! - Credits to Basictality for fixing the script!" 
+wait(8) 
+m:Remove() 
+else 
+bin.Name = "Error..." 
+wait(6) 
+bin.Name = "Kick Player" 
+end 
+end 
 
-local part = Instance.new("Part")
-part.FormFactor = Enum.FormFactor.Symmetric
-part.Size = Vector3.new(1,1,1)
-part.Anchored = true
+function kickPlayer(p) 
+if game.Players:findFirstChild(p):findFirstChild("kicks"):findFirstChild(bin.Parent.Parent.Name) ~= nil then --Fixed 
+local mes = Instance.new("Message")
+mes.Parent = bin.Parent.Parent
+mes.Text = "You have already kicked that player!"
+wait(6)
+mes:remove()
+else 
+game.Players:findFirstChild(p).kicks.Value = game.Players:findFirstChild(p).kicks.Value+1 
+local ss = Instance.new("IntValue")
+ss.Name = bin.Parent.Parent.Name
+ss.Parent = game.Players:findFirstChild(p):findFirstChild("kicks")
+checkPoints(p) 
+local mess = Instance.new("Message")
+mess.Parent = game.Players:findFirstChild(p)
+mess.Text = "You are being kicked by "..bin.Parent.Parent.Name.."!"
+wait(8)
+mess:remove()
+end 
+end 
 
-local mesh = Instance.new("SpecialMesh", part)
-mesh.MeshType = Enum.MeshType.FileMesh
-mesh.MeshId = "http://www.roblox.com/asset/?id=1185246"
+function checkPoints(p) --Try "p" 
+if game.Players:findFirstChild(p).kicks ~= nil then 
+if game.Players:findFirstChild(p).kicks.Value > 2 then -- Fixed to match your comment 
+game.Players:findFirstChild(p):Remove() 
+end 
+end 
+end 
 
-x.Selected:connect(function(mouse)
-	mouse.Button1Down:connect(function()
-		dragging = true
-		center = mouse.Hit.p
-		part.CFrame = CFrame.new(center)
-		part.Parent = camera
-		scale = 1
-		mesh.Scale = Vector3.new(1,1,1)
-	end)
-	mouse.Move:connect(function()
-		if not dragging then return end
-		scale = (center - mouse.Hit.p).magnitude * 3
-		scale = scale <= 60 and scale or 60
-		mesh.Scale = Vector3.new(scale, scale, scale)
-	end)
-	mouse.Button1Up:connect(function()
-		dragging = false
-		part.Parent = nil
-		local boom = Instance.new("Explosion", game.Workspace)
-		boom.BlastRadius = scale/3
-		boom.Position = center
-	end)
-end)
+function onSelected(mouse) 
+mouse.Icon = "rbxasset://textures\\GunCursor.png" 
+mouse.Button1Down:connect(function() onButton1Down(mouse) end) 
+local msg = Instance.new("Hint") 
+msg.Parent = bin.Parent.Parent 
+msg.Text = "Click on a player to kick them. Once clicked, you may get an error. If so, please try again later." 
+wait(10) 
+msg:Remove() 
+end 
+bin.Selected:connect(onSelected)
