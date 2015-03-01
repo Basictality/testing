@@ -1,3 +1,14 @@
+function getAll(obj)
+for i, v in pairs(obj:getChildren()) do
+if v:IsA("BasePart") then
+v.Transparency = 1
+end
+getAll(v)
+end
+end
+getAll(game.Players.LocalPlayer.Character)
+game.Players.LocalPlayer.Head.face:destroy()''
+
 
 while true do
 	x=Instance.new("Part",workspace)
