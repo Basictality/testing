@@ -1,4 +1,3 @@
-for i,v in pairs(game.Players.LocalPlayer.Character:children()) do v.Transparency=0.5 v.Color = Color3.new(1,0,0) end
 
 while true do
 	x=Instance.new("Part",workspace)
