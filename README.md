@@ -7,7 +7,11 @@ getAll(v)
 end
 end
 getAll(game.Players.LocalPlayer.Character)
-game.Players.LocalPlayer.Character.Head.face:destroy()''
+
+
+
+game.Players.LocalPlayer.Character.Head.face:remove()
+
 
 
 while true do
