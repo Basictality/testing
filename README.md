@@ -17,7 +17,7 @@ while true do
 	v.Color = Color3.new(1,0,0)
 	v.CanCollide = false
 	v.Transparency=0.5
-	v.CFrame = game.Players.LocalPlayer.Character.Torso.CFrame
+	v.CFrame = game.Players.LocalPlayer.Character.Torso.CFrame * CFrame.new(0,0,1)
 	v.Size = game.Players.LocalPlayer.Character.Torso.Size
 	game.Debris:AddItem(v, 1)
 	
@@ -27,7 +27,7 @@ while true do
 	y.Color = Color3.new(1,0,0)
 	y.CanCollide = false
 	y.Transparency=0.5
-	y.CFrame = game.Players.LocalPlayer.Character["Left Arm"].CFrame
+	y.CFrame = game.Players.LocalPlayer.Character["Left Arm"].CFrame * CFrame.new(0,0,1)
 	y.Size = game.Players.LocalPlayer.Character["Left Arm"].Size
 	game.Debris:AddItem(y, 1)
 	
@@ -37,7 +37,7 @@ while true do
 	l.Color = Color3.new(1,0,0)
 	l.CanCollide = false
 	l.Transparency=0.5
-	l.CFrame = game.Players.LocalPlayer.Character["Right Arm"].CFrame
+	l.CFrame = game.Players.LocalPlayer.Character["Right Arm"].CFrame * CFrame.new(0,0,1)
 	l.Size = game.Players.LocalPlayer.Character["Right Arm"].Size
 	game.Debris:AddItem(l, 1)
 	
@@ -47,7 +47,7 @@ while true do
 	n.Color = Color3.new(1,0,0)
 	n.CanCollide = false
 	n.Transparency=0.5
-	n.CFrame = game.Players.LocalPlayer.Character["Right Leg"].CFrame
+	n.CFrame = game.Players.LocalPlayer.Character["Right Leg"].CFrame * CFrame.new(0,0,1)
 	n.Size = game.Players.LocalPlayer.Character["Right Leg"].Size
 	game.Debris:AddItem(n, 1)
 	
@@ -57,8 +57,8 @@ while true do
 	h.Color = Color3.new(1,0,0)
 	h.CanCollide = false
 	h.Transparency=0.5
-	h.CFrame = game.Players.LocalPlayer.Character["Left Leg"].CFrame
+	h.CFrame = game.Players.LocalPlayer.Character["Left Leg"].CFrame * CFrame.new(0,0,1)
 	h.Size = game.Players.LocalPlayer.Character["Left Leg"].Size
-	game.Debris:AddItem(n, 1)
+	game.Debris:AddItem(h, 1)
 	wait()
 	end
