@@ -49,16 +49,16 @@ while true do
 	y.Size = game.Players.LocalPlayer.Character["Left Arm"].Size
 	game.Debris:AddItem(y, 1)
 	
-		l=Instance.new("Part",workspace)
-	l.FormFactor = "Custom"
-	1.Material = "Neon"
-	l.Anchored = true
-	l.Color = Color3.new(1,0,0)
-	l.CanCollide = false
-	l.Transparency=0.5
-	l.CFrame = game.Players.LocalPlayer.Character["Right Arm"].CFrame * CFrame.new(0,0,1)
-	l.Size = game.Players.LocalPlayer.Character["Right Arm"].Size
-	game.Debris:AddItem(l, 1)
+		er=Instance.new("Part",workspace)
+	er.FormFactor = "Custom"
+	er.Material = "Neon"
+	er.Anchored = true
+	er.Color = Color3.new(1,0,0)
+	er.CanCollide = false
+	er.Transparency=0.5
+	er.CFrame = game.Players.LocalPlayer.Character["Right Arm"].CFrame * CFrame.new(0,0,1)
+	er.Size = game.Players.LocalPlayer.Character["Right Arm"].Size
+	game.Debris:AddItem(er, 1)
 	
 			n=Instance.new("Part",workspace)
 	n.FormFactor = "Custom"
