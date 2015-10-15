@@ -21,13 +21,15 @@ while true do
 	x.Anchored = true
 	x.Color = Color3.new(1,0,0)
 	x.Transparency=0.5
+	x.Material = "Neon"
 	x.CFrame = game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0,0,1)
-	x.Size = game.Players.LocalPlayer.Character.Head.Size
+	x.Size = Vector3.new(2,1.5,1.5)
 	x.CanCollide = false
 	game.Debris:AddItem(x, 1)
 	
 		v=Instance.new("Part",workspace)
 	v.FormFactor = "Custom"
+	v.Material = "Neon"
 	v.Anchored = true
 	v.Color = Color3.new(1,0,0)
 	v.CanCollide = false
@@ -39,6 +41,7 @@ while true do
 			y=Instance.new("Part",workspace)
 	y.FormFactor = "Custom"
 	y.Anchored = true
+	y.Material = "Neon"
 	y.Color = Color3.new(1,0,0)
 	y.CanCollide = false
 	y.Transparency=0.5
@@ -48,6 +51,7 @@ while true do
 	
 		l=Instance.new("Part",workspace)
 	l.FormFactor = "Custom"
+	1.Material = "Neon"
 	l.Anchored = true
 	l.Color = Color3.new(1,0,0)
 	l.CanCollide = false
@@ -59,6 +63,7 @@ while true do
 			n=Instance.new("Part",workspace)
 	n.FormFactor = "Custom"
 	n.Anchored = true
+	n.Material = "Neon"
 	n.Color = Color3.new(1,0,0)
 	n.CanCollide = false
 	n.Transparency=0.5
@@ -69,6 +74,7 @@ while true do
 				h=Instance.new("Part",workspace)
 	h.FormFactor = "Custom"
 	h.Anchored = true
+	h.Material = "Neon"
 	h.Color = Color3.new(1,0,0)
 	h.CanCollide = false
 	h.Transparency=0.5
